@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Scandiweb-Test/static/css/main.fcfdd2f0.css",
+    "main.js": "/Scandiweb-Test/static/js/main.0c96b116.js",
+    "index.html": "/Scandiweb-Test/index.html",
+    "main.fcfdd2f0.css.map": "/Scandiweb-Test/static/css/main.fcfdd2f0.css.map",
+    "main.0c96b116.js.map": "/Scandiweb-Test/static/js/main.0c96b116.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fcfdd2f0.css",
+    "static/js/main.0c96b116.js"
+  ]
+}
