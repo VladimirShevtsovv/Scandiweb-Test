@@ -3,7 +3,7 @@
 Video of how it works: <a href='https://drive.google.com/file/d/195o20TQfim4kb7-CiAi-ohURRCmCvQ9H/view?usp=sharing'>`https://drive.google.com/file/d/195o20TQfim4kb7-CiAi-ohURRCmCvQ9H/view?usp=sharing`</a>
 
 To run the application on your computer download the folder with the server 
-(<a href='https://drive.google.com/drive/folders/1FP5OlRyNWQ0u9N4jJLuEllq7nu2Zb_lt?usp=sharing'>`https://drive.google.com/drive/folders/1FP5OlRyNWQ0u9N4jJLuEllq7nu2Zb_lt?usp=sharing`</a>) и выполните следующие инструкции: 
+(<a href='https://drive.google.com/drive/folders/1FP5OlRyNWQ0u9N4jJLuEllq7nu2Zb_lt?usp=sharing'>`https://drive.google.com/drive/folders/1FP5OlRyNWQ0u9N4jJLuEllq7nu2Zb_lt?usp=sharing`</a>) and follow the instructions: 
 
 1. You will need node.js and npm to run this project.
 
