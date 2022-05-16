@@ -1,0 +1,97 @@
+.container {
+    display: flex;
+}
+
+.container__img {
+    height: 558px;
+    width: 610px;
+    object-fit: cover;
+    margin-left: 40px;
+}
+
+.Swiper__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transform: translateY(0px);
+    transition: 0.2s linear;
+
+}
+
+
+.Swiper__listButtons {
+    border-radius: 50%;
+    border: 2px solid gray;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.15s linear;
+    background: transparent;
+
+}
+
+.Swiper__listButtons img{
+    width: 14px;
+    height: 9px;
+}
+
+.Swiper__listButtons:not([disabled]):hover{
+    border: 1px solid #5ECE7B;
+}
+
+.Swiper__listButtons:disabled {
+    opacity: 0.5;
+    cursor: auto;
+}
+
+.Swiper__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: 50px;
+}
+
+
+
+
+.Swiper__listContainer {
+    height: 560px;
+    overflow: hidden;
+    margin: 20px 0;
+
+}
+
+
+.Swiper__listItem img {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.Swiper__listItem {
+    width: 77.5px;
+    height: 77.5px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.Swiper__listItem:hover {
+    border: 1px solid #5ECE7B;
+    transition: 0.15s linear;
+}
+
+.Swiper__listItemActive{
+    border: 1px solid #5ECE7B;
+}
+
+.Swiper__listItem:not(:last-child) {
+    margin-bottom: 40px;
+}
