@@ -29,7 +29,7 @@ class Main extends Component {
                     {routesOfPLP}
                     {routesOfPDP}
                     {this.props.selectedCategory ?
-                        <Route path="/" key={'/'} element={<Navigate   to={`PLP-${this.props.selectedCategory}`}/>}/> : null}
+                        <Route path="*" key={'/'} element={<Navigate   to={`/PLP-${this.props.selectedCategory}`}/>}/> : null}
                         <Route path='/Cart' key={'/Cart'} element={<CartPage  createNewProductToCart={this.props.createNewProductToCart}
                                                            selectPrice={this.props.selectPrice}
                                                            createListWithAttribute={this.props.createListWithAttribute}/>}></Route>

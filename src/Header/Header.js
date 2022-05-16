@@ -16,7 +16,6 @@ class Header extends Component {
     render() {
 
         return (
-
             <React.Fragment>
                 {this.props.loadingInfo.fetchCategoriesAndCurrences.status !==null ?
                    <LoaderContainer statusOfLoad={this.props.loadingInfo.fetchCategoriesAndCurrences.status} errorMessage={this.props.loadingInfo.fetchCategoriesAndCurrences.errorMessage}/>

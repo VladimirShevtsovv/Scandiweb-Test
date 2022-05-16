@@ -5,9 +5,13 @@ import inCartImg from './Common.png'
 
 
 
+
 class ProductListingPage extends Component {
 
+
+
     render() {
+
         let listWithProductsOfCategory = this.props.allProducts.map(item => {
             let priceAmount = this.props.selectPrice(item.prices, this.props.selectedCurrency)
             return <li key={item.name} id={item.id}

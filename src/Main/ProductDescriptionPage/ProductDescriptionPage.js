@@ -10,8 +10,7 @@ class ProductDescriptionPage extends Component {
         this.props.dispatch(fetchProductsDiscriptionPage(this.props.id))
     }
 
-    // Валидация на то, чтобы все атрибуты были выбраны, перед добавлением в корзину
-
+    // Валидация на то , что бы все атрибуты были выбраны, перед добавление в корзину
     validation = (arrayWitAttributes) => {
         let copyArray = [];
         for (let i = 0; i < arrayWitAttributes.length; i++) {
