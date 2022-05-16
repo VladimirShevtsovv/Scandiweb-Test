@@ -2,7 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<<<<<<< HEAD
 ## Available Scripts
+=======
+To run the application on your computer download the folder with the server 
+(<a href='https://drive.google.com/drive/folders/1FP5OlRyNWQ0u9N4jJLuEllq7nu2Zb_lt?usp=sharing'>`https://drive.google.com/drive/folders/1FP5OlRyNWQ0u9N4jJLuEllq7nu2Zb_lt?usp=sharing`</a>) and follow the instructions: 
+>>>>>>> 2953c55959160b1d96170335d7d2e2f960ae338a
 
 In the project directory, you can run:
 
