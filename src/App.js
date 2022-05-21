@@ -150,7 +150,7 @@ class App extends Component {
     render() {
 
         return (
-            <div className={styles.App}>
+            <div className={styles.App} style={this.props.visibilityOfCartOverlay === true ? {position:'fixed'}:{}}>
                 <Header createListWithAttribute={this.createListWithAttribute} selectPrice={this.selectPrice}
                         createNewProductToCart={this.createNewProductToCart}/>
 

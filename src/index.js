@@ -18,11 +18,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ApolloProvider client={client}>
         <BrowserRouter>
-            <React.StrictMode>
+
                 <Provider store={store}>
                     <App client={client}/>
                 </Provider>
-            </React.StrictMode>
+
         </BrowserRouter>
     </ApolloProvider>
 );

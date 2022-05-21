@@ -18,6 +18,13 @@ export const fetchCategoriesAndCurrences = createAsyncThunk(
                             label
                             symbol
                         }
+                        category(input:{title: "all"}) {
+                            products{
+                                 id
+                            }  
+                        }
+                            
+                       
                     }`,
             }),
         })
@@ -37,6 +44,7 @@ export const fetchProductsOfCategory = createAsyncThunk(
             body: JSON.stringify({
                 query: `{
                         category(input:{title: "${selectedCategory}"}) {
+                            name
                             products{
                               brand
                             attributes {
@@ -67,6 +75,7 @@ export const fetchProductsOfCategory = createAsyncThunk(
             }),
         })
         const request = await response.json()
+
         return request
     }
 )
@@ -84,6 +93,7 @@ export const fetchProductsDiscriptionPage = createAsyncThunk(
                         product(id: "${idOfProduct}"){
                             id 
                             name
+                            inStock
                             gallery
                             description
                             attributes {
@@ -112,6 +122,7 @@ export const fetchProductsDiscriptionPage = createAsyncThunk(
             }),
         })
         const request = await response.json()
+
         return request
     }
 )
@@ -133,6 +144,7 @@ const toolkitSlice = createSlice({
             visibilityOfDropDownMenu: false,
         },
         allProducts: [],
+        allProductsOfCategory: [],
         productDescriptionPage: {
             name: null,
             brand: null,
@@ -140,6 +152,7 @@ const toolkitSlice = createSlice({
             attributes: [],
             prices: [],
             gallery: [],
+            inStock: null,
 
         },
         swiperInfo: {
@@ -237,16 +250,17 @@ const toolkitSlice = createSlice({
         },
         [fetchCategoriesAndCurrences.fulfilled]: (state, action) => {
             state.categories.allCategories = action.payload.data.categories
-            state.categories.selectedCategory = action.payload.data.categories[0].name
             state.currencies.allCurrencies = action.payload.data.currencies
             state.currencies.selectedCurrency.name = action.payload.data.currencies[0].label
             state.currencies.selectedCurrency.symbol = action.payload.data.currencies[0].symbol
+            state.allProducts =action.payload.data.category.products
             state.loadingInfo.fetchCategoriesAndCurrences.status = null
+
         },
         [fetchCategoriesAndCurrences.rejected]: (state, action) => {
             state.loadingInfo.fetchCategoriesAndCurrences.status = 'rejected'
             state.loadingInfo.fetchCategoriesAndCurrences.errorMessage = action.error.name
-            console.log(action)
+
         },
 
 
@@ -254,7 +268,7 @@ const toolkitSlice = createSlice({
             state.loadingInfo.fetchProductsOfCategory.status = 'pending'
         },
         [fetchProductsOfCategory.fulfilled]: (state, action) => {
-            state.allProducts = action.payload.data.category.products
+            state.allProductsOfCategory = action.payload.data.category.products
             state.loadingInfo.fetchProductsOfCategory.status = null
         },
         [fetchProductsOfCategory.rejected]: (state, action) => {
@@ -269,7 +283,7 @@ const toolkitSlice = createSlice({
             state.productDescriptionPage.name = action.payload.data.product.name
             state.productDescriptionPage.brand = action.payload.data.product.brand
             state.productDescriptionPage.description = action.payload.data.product.description
-
+            state.productDescriptionPage.inStock = action.payload.data.product.inStock
             state.productDescriptionPage.prices = action.payload.data.product.prices
             state.productDescriptionPage.gallery = action.payload.data.product.gallery
             state.swiperInfo.allImgLength = action.payload.data.product.gallery.length

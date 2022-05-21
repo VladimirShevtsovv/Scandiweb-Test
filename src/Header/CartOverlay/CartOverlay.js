@@ -22,6 +22,12 @@ class CartOverlay extends Component {
     render() {
 
 
+
+        let productCount = 0;
+        for (let i = 0; i < this.props.productsInCart.length; i++) {
+            productCount +=this.props.productsInCart[i].amount
+        }
+
         return (
             <React.Fragment>
                 <div
@@ -36,11 +42,12 @@ class CartOverlay extends Component {
                     }}>
                     <img src={cartIcon} className={styles.CartOverlay__containerWithCartImgImg} alt={'Cart Icon'}/>
                     {this.props.productsInCart.length > 0 ?
-                        <div className={styles.CartOverlay__amountImg}>{this.props.productsInCart.length}</div> : null}
+                        <div className={styles.CartOverlay__amountImg}>{productCount}</div> : null}
                     <div onMouseDown={(e) => {
                         e.stopPropagation()
                     }}
                          className={this.props.visibilityOfCartOverlay === true ? styles.CartOverlay__container : `${styles.CartOverlay__container} ${styles.CartOverlay__containerHide}`}>
+
                         <CartPage createNewProductToCart={this.props.createNewProductToCart}
                                   selectPrice={this.props.selectPrice}
                                   createListWithAttribute={this.props.createListWithAttribute} overlay={'overlay'}/>

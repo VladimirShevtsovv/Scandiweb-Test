@@ -9,7 +9,6 @@ import {onClickSwiperNextButton, onClickSwiperPrevButton, onChangeSelectedImg} f
 
 class Swiper extends Component {
     render() {
-
         const allImgSwiper = this.props.allImgOfProduct.map((item, id) => {
             return <li key={`${item}${id}`}
                 className={item === this.props.swiperInfo.selectedImg ? `${styles.Swiper__listItem} ${styles.Swiper__listItemActive}` : styles.Swiper__listItem}>
@@ -21,7 +20,7 @@ class Swiper extends Component {
 
         return (
             <div className={styles.container}>
-                <div className={styles.Swiper__container}>
+                <div className={styles.Swiper__container} style={this.props.allImgOfProduct.length<=5 ? {bottom:'0'}:{}}>
                     <button className={styles.Swiper__listButtons}
                             disabled={this.props.swiperInfo.firstVisibleItem === 1}
                             onClick={() => {

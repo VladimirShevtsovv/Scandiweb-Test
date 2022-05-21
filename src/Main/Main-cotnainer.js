@@ -4,9 +4,9 @@ import Main from "./Main";
 
 let mapStateToProps = (state) => {
     return {
-        allProducts: state.toolkit.allProducts,
         allCategories: state.toolkit.categories.allCategories,
         selectedCategory :  state.toolkit.categories.selectedCategory,
+        allProducts: state.toolkit.allProducts
 
     }
 }

@@ -40,11 +40,28 @@ class CartPage extends Component {
 
     }
 
+    componentDidUpdate() {
+        this.updateTotalInfo()
+    }
+    // Расчет общей стоимости и dispatch d state информации об общей стоимости
+    updateTotalInfo = () => {
+        let totalPrice = null;
+        let quantity = null;
+        this.props.productsInCart.forEach(item => {
+            let price = this.props.selectPrice(item.prices, this.props.selectedCurrency)
+            totalPrice += price * item.amount
+            quantity += item.amount
+        })
+        let totalTax = this.props.totalCartInfo.taxPercent / 100 * totalPrice
+        this.props.dispatch(setTotalCartInfo({
+            quantity: quantity,
+            totalPrice: totalPrice === null ? totalPrice : totalPrice.toFixed(2),
+            totalTax: totalTax,
+        }))
+    }
 
     render() {
 
-        let totalPrice = null;
-        let quantity = null;
 
         // Создание списка товаров находящихся в корзине
         let arrayWithAllProductsInCart = this.props.productsInCart.map((item, id) => {
@@ -56,8 +73,6 @@ class CartPage extends Component {
                     <img src={item} className={this.props.overlay ? styles.CartPage__swipeImg : ''} alt={'Slider IMG'}/>
                 </SwiperSlide>
             })
-            totalPrice += price * item.amount
-            quantity += item.amount
             return <li className={styles.CartPage__listItem} key={`${item.name}${item.id}`}
                        style={this.props.overlay ? {border: 'none', paddingTop: '16px'} : {}}>
                 <InfoAboutProduct price={price} listWithAttributes={listWithAttributes}
@@ -94,16 +109,9 @@ class CartPage extends Component {
             </li>
         })
 
-        // Расчет общей стоимости и dispatch d state информации об общей стоимости
-        let totalTax = this.props.totalCartInfo.taxPercent / 100 * totalPrice
-        this.props.dispatch(setTotalCartInfo({
-            quantity: quantity,
-            totalPrice: totalPrice === null ? totalPrice : totalPrice.toFixed(2),
-            totalTax: totalTax,
-        }))
-
         return (
-            <div>
+            <div style={{maxHeight: 'calc(100vh - 80px)',
+                overflow: 'auto', width:'100%', padding:'0 16px', overflowX:'hidden'}}>
                 {this.props.overlay ? this.props.productsInCart.length ? <div
                         className={styles.CartPage__cartOverlayHeading}>MyBag, <span>{this.props.totalCartInfo.quantity} items</span>
                     </div> : '' :

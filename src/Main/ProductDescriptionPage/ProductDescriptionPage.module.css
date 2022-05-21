@@ -185,7 +185,12 @@
     transition: 0.15s linear;
 }
 
-.ProductDescriptionPage__button:hover {
+.ProductDescriptionPage__button:disabled{
+    pointer-events: none;
+    background: lightgrey;
+}
+
+.ProductDescriptionPage__button:not([disabled]):hover {
     background: green;
 }
 
@@ -194,7 +199,14 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 159.96%;
+    max-height: 220px;
+    overflow: auto;
 
+}
+.ProductDescriptionPage__description ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .ProductDescriptionPage__description *:not(h1) {
@@ -267,12 +279,13 @@
     top: 80px;
     right: 0;
     width: 100vw;
-    height: 100vmax;
-    min-height: 1900px;
+    height: calc(100vh - 80px);
     background: rgba(57, 55, 72, 0.22);
     z-index: 9;
 
 }
+
+
 
 .InfoAboutProduct__container{
     width: 100%;

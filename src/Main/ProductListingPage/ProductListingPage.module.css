@@ -85,12 +85,11 @@
 
 .ProductListingPage__listItemOutOfStock {
     opacity: 0.5;
-    cursor: auto;
-    pointer-events: none;
+    cursor: pointer;
 }
 
 .ProductListingPage__listItemOutOfStockHeading {
-    ont-style: normal;
+    font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 160%;

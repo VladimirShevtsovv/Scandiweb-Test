@@ -7,7 +7,7 @@ import ProductListingPage from "./ProductListingPage";
 
 let mapStateToProps = (state) => {
     return {
-        allProducts : state.toolkit.allProducts,
+        allProductsOfCategory : state.toolkit.allProductsOfCategory,
         selectedCurrency: state.toolkit.currencies.selectedCurrency,
         selectedCategory: state.toolkit.categories.selectedCategory,
         productsInCart: state.toolkit.productsInCart,
