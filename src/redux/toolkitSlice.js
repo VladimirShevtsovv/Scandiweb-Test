@@ -17,14 +17,7 @@ export const fetchCategoriesAndCurrences = createAsyncThunk(
                         currencies{
                             label
                             symbol
-                        }
-                        category(input:{title: "all"}) {
-                            products{
-                                 id
-                            }  
-                        }
-                            
-                       
+                        } 
                     }`,
             }),
         })
@@ -75,7 +68,6 @@ export const fetchProductsOfCategory = createAsyncThunk(
             }),
         })
         const request = await response.json()
-
         return request
     }
 )
@@ -122,7 +114,6 @@ export const fetchProductsDiscriptionPage = createAsyncThunk(
             }),
         })
         const request = await response.json()
-
         return request
     }
 )
@@ -143,7 +134,6 @@ const toolkitSlice = createSlice({
             },
             visibilityOfDropDownMenu: false,
         },
-        allProducts: [],
         allProductsOfCategory: [],
         productDescriptionPage: {
             name: null,
@@ -253,7 +243,7 @@ const toolkitSlice = createSlice({
             state.currencies.allCurrencies = action.payload.data.currencies
             state.currencies.selectedCurrency.name = action.payload.data.currencies[0].label
             state.currencies.selectedCurrency.symbol = action.payload.data.currencies[0].symbol
-            state.allProducts =action.payload.data.category.products
+
             state.loadingInfo.fetchCategoriesAndCurrences.status = null
 
         },

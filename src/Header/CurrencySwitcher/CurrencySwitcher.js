@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import styles from "./CurrencySwitcher.module.css";
-import {changeSelectedCurrency, openingDropDownMenu, hideDropDownMenu} from './../../redux/toolkitSlice'
+import {changeSelectedCurrency, openingDropDownMenu, hideDropDownMenu} from '../../redux/toolkitSlice'
 import arrow from './Vector.png'
-import cartIcon from './cart.png'
+
 import CartOverlay from "../CartOverlay/CartOverlay-container";
 
 class CurrencySwitcher extends Component {

@@ -1,7 +1,4 @@
-import React from "react";
 import {connect} from "react-redux";
-
-
 import CurrencySwitcher from "./CurrencySwitcher"
 
 let mapStateToProps = (state) => {

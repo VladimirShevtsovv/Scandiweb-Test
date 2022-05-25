@@ -1,4 +1,4 @@
-import {combineReducers, configureStore, createStore} from "@reduxjs/toolkit";
+import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import toolkitSlice from "./toolkitSlice";
 
 // assume that the counter slice will be combined with other slices

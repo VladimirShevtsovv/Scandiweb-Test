@@ -153,8 +153,6 @@ class App extends Component {
             <div className={styles.App} style={this.props.visibilityOfCartOverlay === true ? {position:'fixed'}:{}}>
                 <Header createListWithAttribute={this.createListWithAttribute} selectPrice={this.selectPrice}
                         createNewProductToCart={this.createNewProductToCart}/>
-
-
                 {this.props.loadingInfo.fetchProductsOfCategory.status !== null ?
 
                     <LoaderContainer statusOfLoad={this.props.loadingInfo.fetchProductsOfCategory.status}

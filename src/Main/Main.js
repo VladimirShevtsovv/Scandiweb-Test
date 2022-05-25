@@ -9,12 +9,8 @@ import CartPage from "./CartPage/CartPage-container";
 class Main extends Component {
 
     render() {
-        const routesOfPDP = this.props.allProducts.map(item => {
-            return <Route path={`/PDP-${item.id}`} key={`/PDP-${item.id}`} element={<ProductDescriptionPage id={item.id}
-                                                                                                            createListWithAttribute={this.props.createListWithAttribute}
-                                                                                                            createNewProductToCart={this.props.createNewProductToCart}
-                                                                                                            selectPrice={this.props.selectPrice}/>}></Route>
-        })
+
+
 
 
         const routesOfPLP = this.props.allCategories.map(item => {
@@ -26,22 +22,22 @@ class Main extends Component {
         return (
             <div className={styles.Main__container}>
 
-                {this.props.allProducts.length > 0 && this.props.allCategories.length > 0 ? <Routes>
+                {this.props.allCategories.length > 0 ? <Routes>
                     {routesOfPLP}
-                    {routesOfPDP}
+                    <Route  path={`/PDP/:id`} key={`/PDP`} element={<ProductDescriptionPage
+                                                                                                             createListWithAttribute={this.props.createListWithAttribute}
+                                                                                                             createNewProductToCart={this.props.createNewProductToCart}
+                                                                                                             selectPrice={this.props.selectPrice}/>}></Route>
                     <Route path='/Cart' key={'/Cart'}
                            element={<CartPage createNewProductToCart={this.props.createNewProductToCart}
                                               selectPrice={this.props.selectPrice}
                                               createListWithAttribute={this.props.createListWithAttribute}/>}></Route>
                     <Route path={'/Thank-you'} key={'/Thank-you'}
                            element={<div className={styles.ThankYou__container}>THANK YOU FOR ORDER</div>}/>
+
                     {this.props.selectedCategory ? <Route path="*" key={'/'} element={<Navigate
-                        to={`/PLP-${this.props.selectedCategory}`}/>}/> : null}
-
-
+                        to={`/PLP-all`}/>}/> : null}
                 </Routes> : null}
-
-
             </div>
         );
     }

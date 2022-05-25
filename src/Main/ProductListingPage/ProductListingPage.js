@@ -11,9 +11,8 @@ class ProductListingPage extends Component {
         if (this.props.allProductsOfCategory.length === 0) {
             this.props.dispatch(fetchProductsOfCategory(this.props.id))
         }
-
+        this.props.dispatch(changeSelectedCategory(window.location.pathname.slice(5)))
     }
-
     render() {
         let listWithProductsOfCategory = this.props.allProductsOfCategory.map(item => {
             let priceAmount = this.props.selectPrice(item.prices, this.props.selectedCurrency)
@@ -21,7 +20,7 @@ class ProductListingPage extends Component {
                        className={item.inStock === false ?
                            `${styles.ProductListingPage__listItemOutOfStock} ${styles.ProductListingPage__listItem}` : `${styles.ProductListingPage__listItem}`}
             >
-                <NavLink to={`/PDP-${item.id}`} onClick={(e) => {
+                <NavLink to={`/PDP/${item.id}`} onClick={(e) => {
                 }
                 }
                          className={styles.ProductListingPage__listItemLink}>{item.inStock === false ?

@@ -14,7 +14,7 @@ class Swiper extends Component {
                 className={item === this.props.swiperInfo.selectedImg ? `${styles.Swiper__listItem} ${styles.Swiper__listItemActive}` : styles.Swiper__listItem}>
                 <img src={item} onClick={() => {
                     this.props.dispatch(onChangeSelectedImg(item))
-                }}></img>
+                }} alt={'swiper-img'}></img>
             </li>
         })
 
@@ -26,7 +26,7 @@ class Swiper extends Component {
                             onClick={() => {
                                 this.props.dispatch(onClickSwiperPrevButton())
                             }} style={this.props.swiperInfo.allImgLength <= 5 ? {display: 'none'} : {}}>
-                        <img src={buttonPrev}/>
+                        <img src={buttonPrev} alt={'swiper-buttonPrev'}/>
                     </button>
                     <div className={styles.Swiper__listContainer}>
                         <ul className={styles.Swiper__list}
@@ -37,10 +37,10 @@ class Swiper extends Component {
                             onClick={() => {
                                 this.props.dispatch(onClickSwiperNextButton())
                             }} style={this.props.swiperInfo.allImgLength <= 5 ? {display: 'none'} : {}}>
-                        <img src={buttonNext}/>
+                        <img src={buttonNext} alt={'swiper-buttonNext'}/>
                     </button>
                 </div>
-                <img src={this.props.swiperInfo.selectedImg} className={styles.container__img}/>
+                <img src={this.props.swiperInfo.selectedImg} className={styles.container__img} alt={'swiper-selectedImg'}/>
             </div>
 
 

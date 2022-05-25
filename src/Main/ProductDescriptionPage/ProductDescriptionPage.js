@@ -4,7 +4,6 @@ import styles from './ProductDescriptionPage.module.css'
 import Swiper from "./Swiper/Swiper-container";
 import InfoAboutProduct from "./InfoAboutProduct/InfoAboutProduct-container";
 import LoaderContainer from "../../LoaderContainer/LoaderContainer-container";
-
 import parse from 'html-react-parser'
 import 'util'
 import {Buffer} from 'buffer'
@@ -14,8 +13,7 @@ window.Buffer = Buffer
 class ProductDescriptionPage extends Component {
 
     componentDidMount() {
-
-        this.props.dispatch(fetchProductsDiscriptionPage(this.props.id))
+        this.props.dispatch(fetchProductsDiscriptionPage(window.location.pathname.slice(5)))
     }
 
     // Валидация на то , что бы все атрибуты были выбраны, перед добавление в корзину
@@ -37,9 +35,6 @@ class ProductDescriptionPage extends Component {
     componentWillUnmount() {
         this.props.dispatch(swiperInDefolState())
     }
-
-
-
 
     render() {
 

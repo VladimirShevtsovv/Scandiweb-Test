@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {changeSelectedCategory, fetchCategoriesAndCurrences, fetchProductsOfCategory} from '../redux/toolkitSlice'
+import {changeSelectedCategory, fetchCategoriesAndCurrences} from '../redux/toolkitSlice'
 import Category from "./Category/Category-container";
 import CurrencySwitcher from "./CurrencySwitcher/CurrencySwitcher-container";
 import Logo from './a-logo.png'
@@ -15,6 +15,7 @@ class Header extends Component {
             sessionStorage.setItem('selectedCategory', 'all')
         }
         this.props.dispatch(changeSelectedCategory(sessionStorage.getItem('selectedCategory')))
+
     }
 
     render() {

@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React,  {Component} from 'react';
 import styles from "./CartOverlay.module.css";
 import cartIcon from "../CurrencySwitcher/cart.png";
-import {NavLink} from "react-router-dom";
 import {hideVisibilityOfCartOverlay, openingVisibilityOfCartOverlay} from "../../redux/toolkitSlice";
 import CartPage from "../../Main/CartPage/CartPage-container";
 
