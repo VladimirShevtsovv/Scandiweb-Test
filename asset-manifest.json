@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Scandiweb-Test/static/css/main.f368667b.css",
-    "main.js": "/Scandiweb-Test/static/js/main.4182c557.js",
+    "main.js": "/Scandiweb-Test/static/js/main.cbb5ec13.js",
     "index.html": "/Scandiweb-Test/index.html",
     "main.f368667b.css.map": "/Scandiweb-Test/static/css/main.f368667b.css.map",
-    "main.4182c557.js.map": "/Scandiweb-Test/static/js/main.4182c557.js.map"
+    "main.cbb5ec13.js.map": "/Scandiweb-Test/static/js/main.cbb5ec13.js.map"
   },
   "entrypoints": [
     "static/css/main.f368667b.css",
-    "static/js/main.4182c557.js"
+    "static/js/main.cbb5ec13.js"
   ]
 }
